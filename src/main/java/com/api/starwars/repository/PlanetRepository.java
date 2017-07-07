@@ -16,6 +16,7 @@ public interface PlanetRepository extends JpaRepository<Planet, Long>{
 
     Planet findByName(String name); //con crudrepository accedemos a las opciones de un crud
     List<Planet> findPlanetBy(String name);
+    List<Planet> findById(Long id);
     List<Planet> findPlanetsByOrderByNameDesc();
     List<Planet> findPlanetsByPopulationIsGreaterThan(Long Population);
     List<Planet> findPlanetsByPopulationBetween(Long min, Long max);

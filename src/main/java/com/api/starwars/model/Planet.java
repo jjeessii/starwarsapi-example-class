@@ -1,6 +1,7 @@
 package com.api.starwars.model;
 
 import lombok.Data;
+import org.springframework.hateoas.ResourceSupport;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,7 +13,8 @@ import javax.persistence.Id;
 @Entity
 @Data
 //@Getter @Setter and @NoArgsConstructor
-public class Planet {
+public class Planet extends ResourceSupport{
+    //planet no debe extender de resourcesupport, estoy mezclando modelo con resource support deberia crear un objeto nuevo
     @Id
     @GeneratedValue
     private Long id;
@@ -26,4 +28,6 @@ public class Planet {
     private String terrain;
     private Integer surfaceWater;
     private Long population;
+
+
 }
